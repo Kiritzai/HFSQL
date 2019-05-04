@@ -16,7 +16,7 @@ RUN set -x \
 	&& apt-get install --no-install-recommends --no-install-suggests -y libqtgui4 hfsql="${HFSQL_VERSION}" \
 	&& rm -rf /var/lib/apt/lists/*
 
-VOLUME /var/lib/hfsql
+VOLUME /var/lib/hfsql/
 EXPOSE 4900
 
 USER hfsql
