@@ -22,6 +22,6 @@ EXPOSE 4900
 USER hfsql
 
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT /usr/local/bin/docker-entrypoint.sh
 
-CMD ["hfsql"]
+CMD hfsql
