@@ -13,15 +13,15 @@ RUN set -x \
 	&& apt-get remove --purge --auto-remove -y gnupg1 \
 	&& echo "deb http://package.windev.com/${HFSQL_LANG}/debian/ debian main" > /etc/apt/sources.list.d/pcsoft.list \
 	&& apt-get update \
-	&& apt-get install --no-install-recommends --no-install-suggests -y libqtgui4 hfsql="${HFSQL_VERSION}" \
+	&& apt-get install --no-install-recommends --no-install-suggests -y nano libqtgui4 hfsql="${HFSQL_VERSION}" \
 	&& rm -rf /var/lib/apt/lists/*
 
-VOLUME /var/lib/hfsql/
+VOLUME /var/lib/hfsql
 EXPOSE 4900
 
 USER hfsql
 
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
 
-CMD hfsql
+CMD ["hfsql"]
