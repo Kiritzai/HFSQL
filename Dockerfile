@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 MAINTAINER PCSOFT <network@pcsoft.fr>
 
 ARG HFSQL_VERSION=24.0.054.f
-ARG HFSQL_LANG=us
+ARG HFSQL_LANG=fr
 
 RUN set -x \
 	&& groupadd -r hfsql --gid=4900 && useradd -r -g hfsql --uid=4900 hfsql \
